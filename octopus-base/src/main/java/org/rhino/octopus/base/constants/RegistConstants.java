@@ -22,7 +22,7 @@ public final class RegistConstants {
 	
 	public static String getSlaveNode()throws OctopusException{
 		
-		if(StringUtils.isEmpty(slaveNode)){
+		if(StringUtils.hasText(slaveNode) == false){
 			slaveNode = initNode(SLAVERS_REGIST_NODE);
 		}
 		
@@ -31,7 +31,7 @@ public final class RegistConstants {
 	
 	
 	public static String getMasterNode()throws OctopusException{
-		if(StringUtils.isEmpty(masterNode)){
+		if(StringUtils.hasText(masterNode) == false){
 			masterNode = initNode(MASTER_REGIST_NODE);
 		}
 		return masterNode;

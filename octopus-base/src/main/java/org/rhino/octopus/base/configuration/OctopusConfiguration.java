@@ -79,11 +79,12 @@ public class OctopusConfiguration {
 		String name = nameElm.getStringValue();
 		String value = valueElm.getStringValue();
 		
-		if(StringUtils.isEmpty(name)){
+		
+		if(StringUtils.hasText(name) == false){
 			throw new OctopusException("");
 		}
 		
-		if(StringUtils.isEmpty(value)){
+		if(StringUtils.hasText(value) == false){
 			throw new OctopusException("");
 		}
 		
