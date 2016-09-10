@@ -8,33 +8,12 @@ import java.util.Map;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+import org.rhino.octopus.base.constants.ConfConstants;
 import org.rhino.octopus.base.exception.OctopusException;
 import org.springframework.util.StringUtils;
 
 
 public class OctopusConfiguration {
-	
-	private static final String ZOO_KEEPER_NAME = "octopus.common.zookeeper";
-	
-	private static final String SLAVER_LOCAL_LISTENER_PORT_NAME = "octopus.slaver.locallistener.port";
-	
-	private static final String MASTER_LOCAL_LISTENER_PORT_NAME = "octopus.master.locallistener.port";
-	
-	private static final String SLAVER_REMOTE_LISTENER_PORT_NAME = "octopus.common.slaver.remotelistener.port";
-	
-	private static final String MASTER_REMOTE_LISTENER_PORT_NAME = "octopus.common.master.remotelistener.port";
-	
-	private static final String USR_LIB_PATH_NAME = "octopus.slaver.userlib.path";
-	
-	private static final String DB_ADDR_NAME = "octopus.common.db.addr";
-	
-	private static final String DB_PORT_NAME = "octopus.common.db.port";
-	
-	private static final String DB_USER_NAME = "octopus.common.db.user";
-	
-	private static final String DB_PASSWD_NAME = "octopus.common.db.password";
-	
-	private static final String DB_INSTANCE_NAME = "octopus.common.db.name";
 	
 	private static final String PROPERTY_NAME_KEY = "name";
 	
@@ -81,7 +60,7 @@ public class OctopusConfiguration {
 		
 		
 		if(StringUtils.hasText(name) == false){
-			throw new OctopusException("");
+			throw new OctopusException(" ");
 		}
 		
 		if(StringUtils.hasText(value) == false){
@@ -104,15 +83,26 @@ public class OctopusConfiguration {
 	
 	public enum ConfigurationItem{
 		
-		ZOO_KEEPER(ZOO_KEEPER_NAME), 
-		SLAVER_LOCAL_LISTENER_PORT(SLAVER_LOCAL_LISTENER_PORT_NAME),
-		SLAVER_REMOTE_LISTENER_PORT(SLAVER_REMOTE_LISTENER_PORT_NAME),
-		USR_LIB_PATH(USR_LIB_PATH_NAME),
-		MASTER_LOCAL_LISTENER_PORT(MASTER_LOCAL_LISTENER_PORT_NAME),
-		MASTER_REMOTE_LISTENER_PORT(MASTER_REMOTE_LISTENER_PORT_NAME),
-		DB_ADDR(DB_ADDR_NAME),DB_PORT(DB_PORT_NAME),DB_PASSWD(DB_PASSWD_NAME),
-		DB_USER(DB_USER_NAME),DB_INSTANCE(DB_INSTANCE_NAME);
-		
+		ZOO_KEEPER(ConfConstants.ZOO_KEEPER_NAME), 
+		SLAVER_LOCAL_LISTENER_PORT(ConfConstants.SLAVER_LOCAL_LISTENER_PORT_NAME),
+		SLAVER_REMOTE_LISTENER_PORT(ConfConstants.SLAVER_REMOTE_LISTENER_PORT_NAME),
+		USR_LIB_PATH(ConfConstants.USR_LIB_PATH_NAME),
+		MASTER_LOCAL_LISTENER_PORT(ConfConstants.MASTER_LOCAL_LISTENER_PORT_NAME),
+		MASTER_REMOTE_LISTENER_PORT(ConfConstants.MASTER_REMOTE_LISTENER_PORT_NAME),
+		DB_ADDR(ConfConstants.DB_ADDR_NAME),DB_PORT(ConfConstants.DB_PORT_NAME),DB_PASSWD(ConfConstants.DB_PASSWD_NAME),
+		DB_INSTANCE(ConfConstants.DB_INSTANCE_NAME),
+		DB_DRIVER_CLASS(ConfConstants.DB_DRIVER_CLASS_NAME),
+		DB_MAX_ACTIVE(ConfConstants.DB_MAX_ACTIVE),
+		DB_USER_NAME(ConfConstants.DB_USER_NAME),
+		DB_MAX_IDLE(ConfConstants.DB_MAX_IDLE),
+		DB_MIN_IDLE(ConfConstants.DB_MIN_IDLE),
+		DB_MAX_WAIT(ConfConstants.DB_MAX_WAIT),
+		DB_REMOVE_ABANDONED(ConfConstants.DB_REMOVE_ABANDONED),
+		DB_REMOVE_ABANDONED_TIMEOUT(ConfConstants.DB_REMOVE_ABANDONED_TIMEOUT),
+		DB_TEST_ON_BORROW(ConfConstants.DB_TEST_ON_BORROW),
+		DB_TEST_ON_RETURN(ConfConstants.DB_TEST_ON_RETURN),
+		DB_TEST_WHILE_IDLE(ConfConstants.DB_TEST_WHILE_IDLE),
+		DB_VALIDATION_QUERY(ConfConstants.DB_VALIDAION_QUERY);
 		private String name;
 		
 		private ConfigurationItem(String name){
