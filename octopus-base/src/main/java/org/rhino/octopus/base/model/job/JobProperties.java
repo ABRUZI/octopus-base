@@ -1,9 +1,11 @@
 package org.rhino.octopus.base.model.job;
 
+import java.io.File;
+import java.util.List;
+
 /**
  * 任务属性类
  * @author 王铁
- *
  */
 public class JobProperties {
 	
@@ -28,21 +30,24 @@ public class JobProperties {
 	private boolean fatal = false;
 	
 	/**
-	 * 任务启动类
-	 */
-	private String clsName;
-	
-	/**
 	 * 是否是判断节点
 	 */
 	private boolean judge;
 	
 	/**
-	 * 任务类型代码
-	 * 01 Java
-	 * 02 Shell
+	 * 脚本文件的名称
 	 */
-	private String jobTypeCode;
+	private String fileName;
+	
+	/**
+	 * 脚本文件
+	 */
+	private File file;
+	
+	/**
+	 * 脚本执行时的参数列表
+	 */
+	private List<String> paramList;
 
 	public String getId() {
 		return id;
@@ -68,14 +73,6 @@ public class JobProperties {
 		this.fatal = fatal;
 	}
 
-	public String getClsName() {
-		return clsName;
-	}
-
-	public void setClsName(String clsName) {
-		this.clsName = clsName;
-	}
-
 	public boolean isJudge() {
 		return judge;
 	}
@@ -84,20 +81,41 @@ public class JobProperties {
 		this.judge = judge;
 	}
 
-	public String getJobTypeCode() {
-		return jobTypeCode;
-	}
-
-	public void setJobTypeCode(String jobTypeCode) {
-		this.jobTypeCode = jobTypeCode;
-	}
-
 	public String getFlowId() {
 		return flowId;
 	}
 
 	public void setFlowId(String flowId) {
 		this.flowId = flowId;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public File getFile() {
+		return file;
+	}
+
+	public void setFile(File file) {
+		this.file = file;
+	}
+
+	public List<String> getParamList() {
+		return paramList;
+	}
+
+	public void setParamList(List<String> paramList) {
+		this.paramList = paramList;
+	}
+
+	@Override
+	public String toString() {
+		return "JobProperties [id=" + id + ", name=" + name + "]";
 	}
 	
 }

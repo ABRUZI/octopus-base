@@ -12,7 +12,7 @@ public class OctopusDataSource extends BasicDataSource {
 	private OctopusConfiguration conf;
 
 	public OctopusDataSource() throws OctopusException{
-			try{
+		try{
 			this.conf = new OctopusConfiguration(new String[]{ConfConstants.getConfPath() + "/octopus-common.xml"});
 			this.setUrl(this.getConfigUrl());
 			this.setDriverClassName(this.conf.getProperty(ConfigurationItem.DB_DRIVER_CLASS).getValue());

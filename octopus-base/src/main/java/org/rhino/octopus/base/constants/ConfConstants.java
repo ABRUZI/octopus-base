@@ -8,16 +8,27 @@ public class ConfConstants {
 	
 	private static final String CONF_PATH = "/conf";
 	
+	private static final String LOG_PATH = "/logs";
+	
 	public static String getRuntimePath(){
 		return System.getenv(ENV);
 	}
 	
+	/**
+	 * 获取配置文件的存储路径
+	 * @return
+	 */
 	public static final String getConfPath(){
 		return getRuntimePath() + CONF_PATH;
 	}
 	
-	
-	
+	/**
+	 * 获取日志文件的顶级路径
+	 * @return
+	 */
+	public static final String getLogTopPath(){
+		return getRuntimePath() + LOG_PATH;
+	}
 	
 	
 	public static final String ZOO_KEEPER_NAME = "octopus.common.zookeeper";
@@ -30,7 +41,9 @@ public class ConfConstants {
 	
 	public static final String MASTER_REMOTE_LISTENER_PORT_NAME = "octopus.common.master.remotelistener.port";
 	
-	public static final String USR_LIB_PATH_NAME = "octopus.slaver.userlib.path";
+	public static final String SLAVER_PARALLEL_NUM = "octopus.slaver.parallel.number";
+	
+	public static final String SLAVER_SHELL_FILE_DIR = "octopus.slaver.shellfile.dir";
 	
 	public static final String DB_ADDR_NAME = "octopus.common.db.addr";
 	

@@ -18,8 +18,6 @@ public class Flow {
 	
 	private List<Line> lineList;
 	
-	private String param;
-
 	public String getId() {
 		return id;
 	}
@@ -52,14 +50,6 @@ public class Flow {
 		this.lineList = lineList;
 	}
 
-	public String getParam() {
-		return param;
-	}
-
-	public void setParam(String param) {
-		this.param = param;
-	}
-
 	public String getCronExpr() {
 		return cronExpr;
 	}
@@ -67,4 +57,11 @@ public class Flow {
 	public void setCronExpr(String cronExpr) {
 		this.cronExpr = cronExpr;
 	}
+
+	@Override
+	public String toString() {
+		return "Flow [id=" + id + ", name=" + name + "]";
+	}
+	
+	
 }

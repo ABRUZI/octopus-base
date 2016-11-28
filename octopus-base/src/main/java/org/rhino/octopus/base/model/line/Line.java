@@ -10,7 +10,7 @@ public class Line {
 	
 	private String targetJobId;
 	
-	private String condition;
+	private int condition;
 
 	public String getId() {
 		return id;
@@ -36,11 +36,11 @@ public class Line {
 		this.targetJobId = targetJobId;
 	}
 
-	public String getCondition() {
+	public int getCondition() {
 		return condition;
 	}
 
-	public void setCondition(String condition) {
+	public void setCondition(int condition) {
 		this.condition = condition;
 	}
 

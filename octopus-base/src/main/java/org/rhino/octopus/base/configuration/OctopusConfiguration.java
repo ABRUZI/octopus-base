@@ -28,6 +28,7 @@ public class OctopusConfiguration {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	private void loadConfigFile(String filePath)throws OctopusException{
 		try{
 			SAXReader reader = new SAXReader();
@@ -86,9 +87,10 @@ public class OctopusConfiguration {
 		ZOO_KEEPER(ConfConstants.ZOO_KEEPER_NAME), 
 		SLAVER_LOCAL_LISTENER_PORT(ConfConstants.SLAVER_LOCAL_LISTENER_PORT_NAME),
 		SLAVER_REMOTE_LISTENER_PORT(ConfConstants.SLAVER_REMOTE_LISTENER_PORT_NAME),
-		USR_LIB_PATH(ConfConstants.USR_LIB_PATH_NAME),
 		MASTER_LOCAL_LISTENER_PORT(ConfConstants.MASTER_LOCAL_LISTENER_PORT_NAME),
 		MASTER_REMOTE_LISTENER_PORT(ConfConstants.MASTER_REMOTE_LISTENER_PORT_NAME),
+		SLAVER_PARALLEL_NUMBER(ConfConstants.SLAVER_PARALLEL_NUM),
+		SLAVER_SHELL_FILE_DIR(ConfConstants.SLAVER_SHELL_FILE_DIR),
 		DB_ADDR(ConfConstants.DB_ADDR_NAME),DB_PORT(ConfConstants.DB_PORT_NAME),DB_PASSWD(ConfConstants.DB_PASSWD_NAME),
 		DB_INSTANCE(ConfConstants.DB_INSTANCE_NAME),
 		DB_DRIVER_CLASS(ConfConstants.DB_DRIVER_CLASS_NAME),
